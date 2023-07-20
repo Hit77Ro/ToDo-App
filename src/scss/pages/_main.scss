@@ -1,0 +1,119 @@
+@use "../abstracts/variables" as *;
+
+.container{ 
+  .title {
+    text-align: center;
+    font-size: 23px;
+    color: $main-clr;
+    margin-bottom: 20px;
+  }
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: $shadow-2;
+  padding: 20px;
+  margin-top: 100px;
+  .task,.input { 
+    @include flex-between;
+    .options { 
+      @include flex-between;
+      gap: 20px;
+    }
+  }
+  .tasks {
+    padding-block: 20px;
+  }
+  .task {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fcfcfc;
+    &.existe{ 
+      background-color: lighten($color: red, $amount: 045%);
+    }
+    h1{
+      color: #666;
+    }
+    button { 
+      cursor: pointer;
+      background-color: #e4dfdf33;
+      color: $main-clr;
+      padding: 5px 10px;
+      display: block;
+      border-radius: 5px;
+      &:hover{ 
+        background-color: #d1cece33;
+      }
+      &.delete{ 
+        color: red;
+      }
+    }
+  }
+  
+  input{ 
+    border-radius: 10px;
+    padding: 5px 20px;
+    border: 1px solid #e6e4e4;
+    &[type="text"] { 
+      color: $main-clr;
+
+    }
+    &::placeholder { 
+      font-size: 16px;
+      color: currentColor;
+    }
+  }
+}
+
+.task-title { 
+  text-transform: none;
+}
+.edit-box { 
+  background-color: white;
+  padding: 20px;
+  position: fixed;
+  border-radius: 20px;
+  box-shadow: $shadow-2;
+  @include center;
+  z-index: 2;
+  gap: 20px;
+  transition: .5s;
+  @include flex-between;
+  opacity: 0;
+    pointer-events: none;
+  input{ 
+    border: 1px solid #e7e6e6;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  &.show { 
+    opacity: 1;
+    pointer-events: all;
+    
+  }
+}
+.overlay { 
+  transition: .4s;
+inset: 0;
+  position: fixed;
+  @include box(100vw 100vh) ; 
+  background-color: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  &.show{ 
+    pointer-events: all;
+    opacity: .3;
+  }
+
+}
+
+.main-btn.clear { 
+  transition: .4s;
+  margin: auto;
+  padding: 10px 30px;
+  &.hidden { 
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
