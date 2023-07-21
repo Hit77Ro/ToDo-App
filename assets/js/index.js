@@ -22,9 +22,11 @@ addBtn.addEventListener("click", () => {
     showTasks();
     saveToStorage();
     input.focus()
+    input.select()
 
   }
 });
+
 addBtn.previousElementSibling.addEventListener("keydown", (e) => {
   if (e.key == "Enter") {
     addBtn.click()
@@ -171,3 +173,6 @@ function createBox(task) {
   box.appendChild(optionsDiv);
   return box;
 }
+
+
+

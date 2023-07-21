@@ -28,7 +28,9 @@
     padding: 10px;
     background-color: #fcfcfc;
     &.existe{ 
-      background-color: lighten($color: red, $amount: 045%);
+      // background-color: lighten($color: red, $amount: 045%);
+      background-color: red;
+      color: red;
     }
     h1{
       color: #666;

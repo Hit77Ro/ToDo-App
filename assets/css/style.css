@@ -197,7 +197,8 @@ body {
   background-color: #fcfcfc;
 }
 .container .task.existe {
-  background-color: #ffe6e6;
+  background-color: red;
+  color: red;
 }
 .container .task h1 {
   color: #666;
